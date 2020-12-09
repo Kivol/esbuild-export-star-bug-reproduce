@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+	  "esbuild": "0.8.21"
+  },
+  "dependencies": {
+    "axios": "0.21.0"
+  }
+}
