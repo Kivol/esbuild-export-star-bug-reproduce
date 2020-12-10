@@ -12,6 +12,11 @@ var __commonJS = (callback, module) => () => {
   }
   return module.exports;
 };
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, {get: all[name], enumerable: true});
+};
 var __exportStar = (target, module, desc) => {
   __markAsModule(target);
   if (module && typeof module === "object" || typeof module === "function") {
@@ -27,8 +32,82 @@ var __toModule = (module) => {
   return __exportStar(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", {value: module, enumerable: true}), module);
 };
 
-// node_modules/axios/lib/helpers/bind.js
-var require_bind = __commonJS((exports, module) => {
+// external:http
+import * as ns from "http";
+var require_http = __commonJS((exports, module) => {
+  module.exports = ns;
+});
+
+// external:https
+import * as ns2 from "https";
+var require_https = __commonJS((exports, module) => {
+  module.exports = ns2;
+});
+
+// external:url
+import * as ns3 from "url";
+var require_url = __commonJS((exports, module) => {
+  module.exports = ns3;
+});
+
+// external:stream
+import * as ns4 from "stream";
+var require_stream = __commonJS((exports, module) => {
+  module.exports = ns4;
+});
+
+// external:assert
+import * as ns5 from "assert";
+var require_assert = __commonJS((exports, module) => {
+  module.exports = ns5;
+});
+
+// external:zlib
+import * as ns6 from "zlib";
+var require_zlib = __commonJS((exports, module) => {
+  module.exports = ns6;
+});
+
+// dist/index.mjs
+var dist_exports = {};
+__export(dist_exports, {
+  get: () => get
+});
+var ns7 = __toModule(require_http());
+var ns22 = __toModule(require_https());
+var ns32 = __toModule(require_url());
+var ns42 = __toModule(require_stream());
+var ns52 = __toModule(require_assert());
+var ns62 = __toModule(require_zlib());
+var __create2 = Object.create;
+var __defProp2 = Object.defineProperty;
+var __getProtoOf2 = Object.getPrototypeOf;
+var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+var __getOwnPropNames2 = Object.getOwnPropertyNames;
+var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+var __markAsModule2 = (target) => __defProp2(target, "__esModule", {value: true});
+var __commonJS2 = (callback, module) => () => {
+  if (!module) {
+    module = {exports: {}};
+    callback(module.exports, module);
+  }
+  return module.exports;
+};
+var __exportStar2 = (target, module, desc) => {
+  __markAsModule2(target);
+  if (module && typeof module === "object" || typeof module === "function") {
+    for (let key of __getOwnPropNames2(module))
+      if (!__hasOwnProp2.call(target, key) && key !== "default")
+        __defProp2(target, key, {get: () => module[key], enumerable: !(desc = __getOwnPropDesc2(module, key)) || desc.enumerable});
+  }
+  return target;
+};
+var __toModule2 = (module) => {
+  if (module && module.__esModule)
+    return module;
+  return __exportStar2(__defProp2(module != null ? __create2(__getProtoOf2(module)) : {}, "default", {value: module, enumerable: true}), module);
+};
+var require_bind = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function bind(fn, thisArg) {
     return function wrap() {
@@ -40,9 +119,7 @@ var require_bind = __commonJS((exports, module) => {
     };
   };
 });
-
-// node_modules/axios/lib/utils.js
-var require_utils = __commonJS((exports, module) => {
+var require_utils = __commonJS2((exports, module) => {
   "use strict";
   var bind = require_bind();
   var toString = Object.prototype.toString;
@@ -191,9 +268,7 @@ var require_utils = __commonJS((exports, module) => {
     stripBOM
   };
 });
-
-// node_modules/axios/lib/helpers/buildURL.js
-var require_buildURL = __commonJS((exports, module) => {
+var require_buildURL = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   function encode(val) {
@@ -240,9 +315,7 @@ var require_buildURL = __commonJS((exports, module) => {
     return url;
   };
 });
-
-// node_modules/axios/lib/core/InterceptorManager.js
-var require_InterceptorManager = __commonJS((exports, module) => {
+var require_InterceptorManager = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   function InterceptorManager() {
@@ -269,9 +342,7 @@ var require_InterceptorManager = __commonJS((exports, module) => {
   };
   module.exports = InterceptorManager;
 });
-
-// node_modules/axios/lib/core/transformData.js
-var require_transformData = __commonJS((exports, module) => {
+var require_transformData = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   module.exports = function transformData(data, headers, fns) {
@@ -281,17 +352,13 @@ var require_transformData = __commonJS((exports, module) => {
     return data;
   };
 });
-
-// node_modules/axios/lib/cancel/isCancel.js
-var require_isCancel = __commonJS((exports, module) => {
+var require_isCancel = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function isCancel(value) {
     return !!(value && value.__CANCEL__);
   };
 });
-
-// node_modules/axios/lib/helpers/normalizeHeaderName.js
-var require_normalizeHeaderName = __commonJS((exports, module) => {
+var require_normalizeHeaderName = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   module.exports = function normalizeHeaderName(headers, normalizedName) {
@@ -303,9 +370,7 @@ var require_normalizeHeaderName = __commonJS((exports, module) => {
     });
   };
 });
-
-// node_modules/axios/lib/core/enhanceError.js
-var require_enhanceError = __commonJS((exports, module) => {
+var require_enhanceError = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function enhanceError(error, config, code, request, response) {
     error.config = config;
@@ -332,9 +397,7 @@ var require_enhanceError = __commonJS((exports, module) => {
     return error;
   };
 });
-
-// node_modules/axios/lib/core/createError.js
-var require_createError = __commonJS((exports, module) => {
+var require_createError = __commonJS2((exports, module) => {
   "use strict";
   var enhanceError = require_enhanceError();
   module.exports = function createError(message, config, code, request, response) {
@@ -342,9 +405,7 @@ var require_createError = __commonJS((exports, module) => {
     return enhanceError(error, config, code, request, response);
   };
 });
-
-// node_modules/axios/lib/core/settle.js
-var require_settle = __commonJS((exports, module) => {
+var require_settle = __commonJS2((exports, module) => {
   "use strict";
   var createError = require_createError();
   module.exports = function settle(resolve, reject, response) {
@@ -356,9 +417,7 @@ var require_settle = __commonJS((exports, module) => {
     }
   };
 });
-
-// node_modules/axios/lib/helpers/cookies.js
-var require_cookies = __commonJS((exports, module) => {
+var require_cookies = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
@@ -400,25 +459,19 @@ var require_cookies = __commonJS((exports, module) => {
     };
   }();
 });
-
-// node_modules/axios/lib/helpers/isAbsoluteURL.js
-var require_isAbsoluteURL = __commonJS((exports, module) => {
+var require_isAbsoluteURL = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function isAbsoluteURL(url) {
     return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
   };
 });
-
-// node_modules/axios/lib/helpers/combineURLs.js
-var require_combineURLs = __commonJS((exports, module) => {
+var require_combineURLs = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function combineURLs(baseURL, relativeURL) {
     return relativeURL ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "") : baseURL;
   };
 });
-
-// node_modules/axios/lib/core/buildFullPath.js
-var require_buildFullPath = __commonJS((exports, module) => {
+var require_buildFullPath = __commonJS2((exports, module) => {
   "use strict";
   var isAbsoluteURL = require_isAbsoluteURL();
   var combineURLs = require_combineURLs();
@@ -429,9 +482,7 @@ var require_buildFullPath = __commonJS((exports, module) => {
     return requestedURL;
   };
 });
-
-// node_modules/axios/lib/helpers/parseHeaders.js
-var require_parseHeaders = __commonJS((exports, module) => {
+var require_parseHeaders = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var ignoreDuplicateOf = [
@@ -479,9 +530,7 @@ var require_parseHeaders = __commonJS((exports, module) => {
     return parsed;
   };
 });
-
-// node_modules/axios/lib/helpers/isURLSameOrigin.js
-var require_isURLSameOrigin = __commonJS((exports, module) => {
+var require_isURLSameOrigin = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
@@ -517,9 +566,7 @@ var require_isURLSameOrigin = __commonJS((exports, module) => {
     };
   }();
 });
-
-// node_modules/axios/lib/adapters/xhr.js
-var require_xhr = __commonJS((exports, module) => {
+var require_xhr = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var settle = require_settle();
@@ -634,39 +681,22 @@ var require_xhr = __commonJS((exports, module) => {
     });
   };
 });
-
-// external:http
-import * as ns from "http";
-var require_http = __commonJS((exports, module) => {
-  module.exports = ns;
+var require_http2 = __commonJS2((exports, module) => {
+  module.exports = ns7;
 });
-
-// external:https
-import * as ns2 from "https";
-var require_https = __commonJS((exports, module) => {
-  module.exports = ns2;
+var require_https2 = __commonJS2((exports, module) => {
+  module.exports = ns22;
 });
-
-// external:url
-import * as ns3 from "url";
-var require_url = __commonJS((exports, module) => {
-  module.exports = ns3;
+var require_url2 = __commonJS2((exports, module) => {
+  module.exports = ns32;
 });
-
-// external:stream
-import * as ns4 from "stream";
-var require_stream = __commonJS((exports, module) => {
-  module.exports = ns4;
+var require_stream2 = __commonJS2((exports, module) => {
+  module.exports = ns42;
 });
-
-// external:assert
-import * as ns5 from "assert";
-var require_assert = __commonJS((exports, module) => {
-  module.exports = ns5;
+var require_assert2 = __commonJS2((exports, module) => {
+  module.exports = ns52;
 });
-
-// node_modules/follow-redirects/debug.js
-var require_debug = __commonJS((exports, module) => {
+var require_debug = __commonJS2((exports, module) => {
   var debug;
   try {
     debug = require("debug")("follow-redirects");
@@ -676,15 +706,13 @@ var require_debug = __commonJS((exports, module) => {
   }
   module.exports = debug;
 });
-
-// node_modules/follow-redirects/index.js
-var require_follow_redirects = __commonJS((exports, module) => {
-  var url = require_url();
+var require_follow_redirects = __commonJS2((exports, module) => {
+  var url = require_url2();
   var URL = url.URL;
-  var http = require_http();
-  var https = require_https();
-  var Writable = require_stream().Writable;
-  var assert = require_assert();
+  var http = require_http2();
+  var https = require_https2();
+  var Writable = require_stream2().Writable;
+  var assert = require_assert2();
   var debug = require_debug();
   var eventHandlers = Object.create(null);
   ["abort", "aborted", "connect", "error", "socket", "timeout"].forEach(function(event) {
@@ -1017,15 +1045,10 @@ var require_follow_redirects = __commonJS((exports, module) => {
   module.exports = wrap({http, https});
   module.exports.wrap = wrap;
 });
-
-// external:zlib
-import * as ns6 from "zlib";
-var require_zlib = __commonJS((exports, module) => {
-  module.exports = ns6;
+var require_zlib2 = __commonJS2((exports, module) => {
+  module.exports = ns62;
 });
-
-// node_modules/axios/package.json
-var require_package = __commonJS((exports, module) => {
+var require_package = __commonJS2((exports, module) => {
   module.exports = {
     _from: "axios",
     _id: "axios@0.21.0",
@@ -1141,20 +1164,18 @@ var require_package = __commonJS((exports, module) => {
     version: "0.21.0"
   };
 });
-
-// node_modules/axios/lib/adapters/http.js
-var require_http2 = __commonJS((exports, module) => {
+var require_http22 = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var settle = require_settle();
   var buildFullPath = require_buildFullPath();
   var buildURL = require_buildURL();
-  var http = require_http();
-  var https = require_https();
+  var http = require_http2();
+  var https = require_https2();
   var httpFollow = require_follow_redirects().http;
   var httpsFollow = require_follow_redirects().https;
-  var url = require_url();
-  var zlib = require_zlib();
+  var url = require_url2();
+  var zlib = require_zlib2();
   var pkg = require_package();
   var createError = require_createError();
   var enhanceError = require_enhanceError();
@@ -1364,9 +1385,7 @@ var require_http2 = __commonJS((exports, module) => {
     });
   };
 });
-
-// node_modules/axios/lib/defaults.js
-var require_defaults = __commonJS((exports, module) => {
+var require_defaults = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var normalizeHeaderName = require_normalizeHeaderName();
@@ -1383,7 +1402,7 @@ var require_defaults = __commonJS((exports, module) => {
     if (typeof XMLHttpRequest !== "undefined") {
       adapter = require_xhr();
     } else if (typeof process !== "undefined" && Object.prototype.toString.call(process) === "[object process]") {
-      adapter = require_http2();
+      adapter = require_http22();
     }
     return adapter;
   }
@@ -1439,9 +1458,7 @@ var require_defaults = __commonJS((exports, module) => {
   });
   module.exports = defaults;
 });
-
-// node_modules/axios/lib/core/dispatchRequest.js
-var require_dispatchRequest = __commonJS((exports, module) => {
+var require_dispatchRequest = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var transformData = require_transformData();
@@ -1476,9 +1493,7 @@ var require_dispatchRequest = __commonJS((exports, module) => {
     });
   };
 });
-
-// node_modules/axios/lib/core/mergeConfig.js
-var require_mergeConfig = __commonJS((exports, module) => {
+var require_mergeConfig = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   module.exports = function mergeConfig(config1, config2) {
@@ -1557,9 +1572,7 @@ var require_mergeConfig = __commonJS((exports, module) => {
     return config;
   };
 });
-
-// node_modules/axios/lib/core/Axios.js
-var require_Axios = __commonJS((exports, module) => {
+var require_Axios = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var buildURL = require_buildURL();
@@ -1625,9 +1638,7 @@ var require_Axios = __commonJS((exports, module) => {
   });
   module.exports = Axios;
 });
-
-// node_modules/axios/lib/cancel/Cancel.js
-var require_Cancel = __commonJS((exports, module) => {
+var require_Cancel = __commonJS2((exports, module) => {
   "use strict";
   function Cancel(message) {
     this.message = message;
@@ -1638,9 +1649,7 @@ var require_Cancel = __commonJS((exports, module) => {
   Cancel.prototype.__CANCEL__ = true;
   module.exports = Cancel;
 });
-
-// node_modules/axios/lib/cancel/CancelToken.js
-var require_CancelToken = __commonJS((exports, module) => {
+var require_CancelToken = __commonJS2((exports, module) => {
   "use strict";
   var Cancel = require_Cancel();
   function CancelToken(executor) {
@@ -1677,9 +1686,7 @@ var require_CancelToken = __commonJS((exports, module) => {
   };
   module.exports = CancelToken;
 });
-
-// node_modules/axios/lib/helpers/spread.js
-var require_spread = __commonJS((exports, module) => {
+var require_spread = __commonJS2((exports, module) => {
   "use strict";
   module.exports = function spread(callback) {
     return function wrap(arr) {
@@ -1687,9 +1694,7 @@ var require_spread = __commonJS((exports, module) => {
     };
   };
 });
-
-// node_modules/axios/lib/axios.js
-var require_axios = __commonJS((exports, module) => {
+var require_axios = __commonJS2((exports, module) => {
   "use strict";
   var utils = require_utils();
   var bind = require_bind();
@@ -1718,15 +1723,15 @@ var require_axios = __commonJS((exports, module) => {
   module.exports = axios3;
   module.exports.default = axios3;
 });
-
-// node_modules/axios/index.js
-var require_axios2 = __commonJS((exports, module) => {
+var require_axios2 = __commonJS2((exports, module) => {
   module.exports = require_axios();
 });
-
-// src/index.mjs
-var axios = __toModule(require_axios2());
+var axios = __toModule2(require_axios2());
 var get = axios.default.get;
+
+// src/index2.mjs
+console.log("other code");
+var index2_default = dist_exports;
 export {
-  get
+  index2_default as default
 };

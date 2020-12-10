@@ -18,9 +18,9 @@ const externalCjsToEsmPlugin = external => ({
 const opt = {
 	platform: 'node',
 	format: 'esm',
-	entryPoints: [`src/index.mjs`],
+	entryPoints: [`src/index2.mjs`],
 	bundle: true,
-	outfile: `dist/index.mjs`,
+	outfile: `dist/index2.mjs`,
 	mainFields: ['module', 'main'],
 	external: [...require('module').builtinModules],
 	plugins: [externalCjsToEsmPlugin([...require('module').builtinModules])]
